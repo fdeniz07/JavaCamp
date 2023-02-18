@@ -19,7 +19,7 @@ public class Main {
 
 
         Product product3 = new Product();
-        product3.setName("Kitchen Kahve Makinesi");
+        product3.setName("Kitchen Aid Kahve Makinesi");
         product3.setDiscount(7);
         product3.setUnitPrice(7500);
         product3.setUnitsInStock(3);
@@ -37,17 +37,17 @@ public class Main {
 
         IndividualCustomer individualCustomer =new IndividualCustomer();
         individualCustomer.setId(1);
-        individualCustomer.setPhone("054545454");
-        individualCustomer.setCustomerNumber("235");
-        individualCustomer.setFirstName("Deniz");
-        individualCustomer.setLastName("Kırıtoğlu");
+        individualCustomer.setPhone("12345412121");
+        individualCustomer.setCustomerNumber("111");
+        individualCustomer.setFirstName("Fatih");
+        individualCustomer.setLastName("Deniz");
 
         CorporateCutomer corporateCutomer = new CorporateCutomer();
         corporateCutomer.setId(2);
         corporateCutomer.setCompanyName("Kodlama.io");
-        corporateCutomer.setPhone("0567464684");
+        corporateCutomer.setPhone("123456789");
         corporateCutomer.setTaxNumber("111111111111");
-        corporateCutomer.setCustomerNumber("494954");
+        corporateCutomer.setCustomerNumber("989898");
 
         Customer[] customers= {individualCustomer,corporateCutomer};
 

@@ -4,11 +4,11 @@ package oop;
 public class Product {
 
     //Fields - camelCase
-    String name;
-    double unitPrice;
-    double discount;
-    String imageUrl;
-    int unitsInStock;
+   private String name;
+   private double unitPrice;
+   private double discount;
+   private String imageUrl;
+   private int unitsInStock;
 
     public String getName() {
         return name;
