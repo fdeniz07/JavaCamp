@@ -27,9 +27,11 @@ public class Main {
         if (dolarBugün < dolarDun) {
             okYonu = "down.svg";
             System.out.println(okYonu);
+
         } else if (dolarBugün > dolarDun) {
             okYonu = "up.svg";
             System.out.println(okYonu);
+
         } else {
             okYonu = "equal.svg";
             System.out.println(okYonu);
