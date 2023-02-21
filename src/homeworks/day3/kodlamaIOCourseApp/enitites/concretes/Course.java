@@ -1,12 +1,10 @@
-package homeworks.day3.kodlamaIOCourseApp.enitites.abstracts;
+package homeworks.day3.kodlamaIOCourseApp.enitites.concretes;
 
-import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Instructors;
-import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Students;
+import homeworks.day3.kodlamaIOCourseApp.enitites.enums.CourseStatus;
 
-import java.util.Arrays;
 import java.util.List;
 
-public abstract class Courses {
+public class Course {
 
     private String id;
     private String courseName;
@@ -14,23 +12,25 @@ public abstract class Courses {
     private String[] courseImagePaths;
     private double price;
     private int coursePeriod;
-    private Instructors instructors;
-    private Categories categories;
+    private Instructor instructor;
+    private Category category;
     private List<Students> studentsList;
+    private CourseStatus courseStatus;
 
-    public Courses() {
+    public Course() {
     }
 
-    public Courses(String id, String courseName, String courseDetails, String[] courseImagePaths, double price, int coursePeriod, Instructors instructors, Categories categories, List<Students> studentsList) {
+    public Course(String id, String courseName, String courseDetails, String[] courseImagePaths, double price, int coursePeriod, Instructor instructor, Category category, List<Students> studentsList, CourseStatus courseStatus) {
         this.id = id;
         this.courseName = courseName;
         this.courseDetails = courseDetails;
         this.courseImagePaths = courseImagePaths;
         this.price = price;
         this.coursePeriod = coursePeriod;
-        this.instructors = instructors;
-        this.categories = categories;
+        this.instructor = instructor;
+        this.category = category;
         this.studentsList = studentsList;
+        this.courseStatus = courseStatus;
     }
 
     public String getId() {
@@ -81,20 +81,20 @@ public abstract class Courses {
         this.coursePeriod = coursePeriod;
     }
 
-    public Instructors getInstructors() {
-        return instructors;
+    public Instructor getInstructors() {
+        return instructor;
     }
 
-    public void setInstructors(Instructors instructors) {
-        this.instructors = instructors;
+    public void setInstructors(Instructor instructor) {
+        this.instructor = instructor;
     }
 
-    public Categories getCategories() {
-        return categories;
+    public Category getCategories() {
+        return category;
     }
 
-    public void setCategories(Categories categories) {
-        this.categories = categories;
+    public void setCategories(Category category) {
+        this.category = category;
     }
 
     public List<Students> getStudentsList() {
@@ -105,18 +105,11 @@ public abstract class Courses {
         this.studentsList = studentsList;
     }
 
-    @Override
-    public String toString() {
-        return "{" +
-                "id='" + id + '\'' +
-                ", courseName='" + courseName + '\'' +
-                ", courseDetails='" + courseDetails + '\'' +
-                ", courseImagePaths=" + Arrays.toString(courseImagePaths) +
-                ", price=" + price +
-                ", coursePeriod=" + coursePeriod +
-                ", instructors=" + instructors +
-                ", categories=" + categories +
-                ", studentsList=" + studentsList +
-                '}';
+    public CourseStatus getCourseStatus() {
+        return courseStatus;
+    }
+
+    public void setCourseStatus(CourseStatus courseStatus) {
+        this.courseStatus = courseStatus;
     }
 }
