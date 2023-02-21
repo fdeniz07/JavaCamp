@@ -1,16 +1,16 @@
 package homeworks.day3.kodlamaIOCourseApp.enitites.concretes;
 
-import homeworks.day3.kodlamaIOCourseApp.enitites.abstracts.Courses;
+import homeworks.day3.kodlamaIOCourseApp.enitites.abstracts.Categories;
 
-public class Frontend extends Courses {
+public class Backends extends Categories {
 
     private String programmingLanguage;
     private String details;
 
-    public Frontend() {
+    public Backends() {
     }
 
-    public Frontend(String programmingLanguage, String details) {
+    public Backends(String programmingLanguage, String details) {
         this.programmingLanguage = programmingLanguage;
         this.details = details;
     }
@@ -33,7 +33,7 @@ public class Frontend extends Courses {
 
     @Override
     public String toString() {
-        return "Frontend{" +
+        return "{" +
                 "programmingLanguage='" + programmingLanguage + '\'' +
                 ", details='" + details + '\'' +
                 '}';
