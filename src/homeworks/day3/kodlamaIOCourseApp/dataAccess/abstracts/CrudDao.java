@@ -8,7 +8,7 @@ public interface CrudDao {
 
     void addInstructor(Instructor instructor);
     void addCategory(Category category);
-    void addCourse( Course course);
+    void addCourse(Course course);
 
     void updateInstructor(String id);
     void updateCategory(String id);

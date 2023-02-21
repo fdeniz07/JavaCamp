@@ -1,5 +1,6 @@
 package homeworks.day3.kodlamaIOCourseApp.enitites.concretes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Category {
@@ -7,16 +8,18 @@ public class Category {
     private String id;
     private String categoryName;
     private String categoryDetail;
-    private List<Course> course;
+
+
+    private static List<Category> categoryList=new ArrayList<>();
 
     public Category() {
     }
 
-    public Category(String id, String categoryName, String categoryDetail, List<Course> cours) {
+    public Category(String id, String categoryName, String categoryDetail) {
         this.id = id;
         this.categoryName = categoryName;
         this.categoryDetail = categoryDetail;
-        this.course = cours;
+
     }
 
     public String getId() {
@@ -43,13 +46,12 @@ public class Category {
         this.categoryDetail = categoryDetail;
     }
 
-    public List<Course> getCourses() {
-        return course;
+    @Override
+    public String toString() {
+        return "{" +
+                "id='" + id + '\'' +
+                ", categoryName='" + categoryName + '\'' +
+                ", categoryDetail='" + categoryDetail + '\'' +
+                '}';
     }
-
-    public void setCourses(List<Course> cours) {
-        this.course = cours;
-    }
-
-
 }

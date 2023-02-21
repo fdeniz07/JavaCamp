@@ -9,6 +9,9 @@ public class Students extends Users {
     private boolean gender; //true: Female - false: Male
     private String address;
 
+    public Students() {
+    }
+
     public Students(String id, String firstName, String lastName, String email, LocalDate birthDate, String phoneNumber, boolean gender, String address) {
         super(id, firstName, lastName, email, birthDate, phoneNumber);
         this.gender = gender;
