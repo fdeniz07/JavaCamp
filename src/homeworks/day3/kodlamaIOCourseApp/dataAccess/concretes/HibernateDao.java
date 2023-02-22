@@ -9,13 +9,13 @@ import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Course;
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Instructor;
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Student;
 
-public class HibernateCrudDao implements CategoryDao, CourseDao, InstructorDao, StudentDao {
+public class HibernateDao implements CategoryDao, CourseDao, InstructorDao, StudentDao {
 
 
     //region category
     @Override
     public void addCategory(Category category) {
-
+        System.out.println("Added with Hibernate : " + category.getCategoryName());
     }
 
     @Override
@@ -33,7 +33,7 @@ public class HibernateCrudDao implements CategoryDao, CourseDao, InstructorDao, 
     //region course
     @Override
     public void addCourse(Course course) {
-
+        System.out.println("Added with Hibernate : " + course.getCourseName());
     }
 
     @Override
@@ -51,7 +51,7 @@ public class HibernateCrudDao implements CategoryDao, CourseDao, InstructorDao, 
     //region instructor
     @Override
     public void addInstructor(Instructor instructor) {
-
+        System.out.println("Added with Hibernate : " + instructor.getFirstName() + " " + instructor.getLastName());
     }
 
     @Override
@@ -70,7 +70,7 @@ public class HibernateCrudDao implements CategoryDao, CourseDao, InstructorDao, 
     //region student
     @Override
     public void addStudent(Student student) {
-
+        System.out.println("Added with Hibernate : " + student.getFirstName() + " " + student.getLastName());
     }
 
     @Override

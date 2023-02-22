@@ -5,6 +5,7 @@ import homeworks.day3.kodlamaIOCourseApp.core.logging.Logger;
 import homeworks.day3.kodlamaIOCourseApp.dataAccess.abstracts.CategoryDao;
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Category;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryManager implements CategoryService {
@@ -12,6 +13,8 @@ public class CategoryManager implements CategoryService {
     CategoryDao categoryDao;
     List<Category> categories;
     private Logger[] loggers;
+
+    List<Category> categoryList=new ArrayList<>();
 
     public CategoryManager(CategoryDao categoryDao, Logger[] loggers, List<Category> categories) {
        this.categoryDao=categoryDao;
@@ -43,6 +46,34 @@ public class CategoryManager implements CategoryService {
     @Override
     public void deleteCategory(String id) {
 
+    }
+
+    @Override
+    public List<Category> getCategoryList() {
+        return null;
+    }
+
+    @Override
+    public Category getCategoryById(String id) {
+        for (Category w : categoryList){
+            if (w.getId() == id){
+                return w;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public void fillCategoryList() {
+        Category category1 = new Category("CAT-1001","Fullstack","Fullstack Development");
+        Category category2 = new Category("CAT-1002","Database","Database Development");
+        Category category3 = new Category("CAT-1003","Backend","Backend Development");
+        Category category4 = new Category("CAT-1004","Frontend","Frontend Development");
+
+        categoryList.add(category1);
+        categoryList.add(category2);
+        categoryList.add(category3);
+        categoryList.add(category4);
     }
 
 }

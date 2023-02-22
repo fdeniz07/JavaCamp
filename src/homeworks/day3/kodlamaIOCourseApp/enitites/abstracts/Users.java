@@ -1,25 +1,21 @@
 package homeworks.day3.kodlamaIOCourseApp.enitites.abstracts;
 
-import java.time.LocalDate;
-
 public abstract class Users {
 
     private String id;
     private String firstName;
     private String lastName;
     private String email;
-    private LocalDate birthDate;
     private String phoneNumber;
 
     public Users() {
     }
 
-    public Users(String id, String firstName, String lastName, String email, LocalDate birthDate, String phoneNumber) {
+    public Users(String id, String firstName, String lastName, String email,  String phoneNumber) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.birthDate = birthDate;
         this.phoneNumber = phoneNumber;
     }
 
@@ -53,14 +49,6 @@ public abstract class Users {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
     }
 
     public String getPhoneNumber() {

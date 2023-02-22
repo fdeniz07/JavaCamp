@@ -2,8 +2,6 @@ package homeworks.day3.kodlamaIOCourseApp.enitites.concretes;
 
 import homeworks.day3.kodlamaIOCourseApp.enitites.abstracts.Users;
 
-import java.time.LocalDate;
-
 public class Student extends Users {
 
     private boolean gender; //true: Female - false: Male
@@ -12,11 +10,12 @@ public class Student extends Users {
     public Student() {
     }
 
-    public Student(String id, String firstName, String lastName, String email, LocalDate birthDate, String phoneNumber, boolean gender, String address) {
-        super(id, firstName, lastName, email, birthDate, phoneNumber);
+    public Student(String id, String firstName, String lastName, String email, String phoneNumber, boolean gender, String address) {
+        super(id, firstName, lastName, email,phoneNumber);
         this.gender = gender;
         this.address = address;
     }
+
 
     public boolean isGender() {
         return gender;

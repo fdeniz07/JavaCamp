@@ -14,11 +14,12 @@ public enum CourseStatus {
         this.statusCode = statusCode;
     }
 
+
     public String getStatus() {
         return status;
     }
 
-    public int getStatusCode() {
+    public int getStatusCode(int i) {
         return statusCode;
     }
 }

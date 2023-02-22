@@ -9,13 +9,13 @@ import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Course;
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Instructor;
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Student;
 
-public class JdbcCrudDao implements CategoryDao, CourseDao, InstructorDao, StudentDao {
+public class JdbcDao implements CategoryDao, CourseDao, InstructorDao, StudentDao {
 
 
     //region category
     @Override
     public void addCategory(Category category) {
-
+        System.out.println("Added with JDBC : " + category.getCategoryName());
     }
 
     @Override
@@ -33,7 +33,7 @@ public class JdbcCrudDao implements CategoryDao, CourseDao, InstructorDao, Stude
     //region course
     @Override
     public void addCourse(Course course) {
-
+        System.out.println("Added with JDBC : " + course.getCourseName());
     }
 
     @Override
@@ -51,7 +51,7 @@ public class JdbcCrudDao implements CategoryDao, CourseDao, InstructorDao, Stude
     //region instructor
     @Override
     public void addInstructor(Instructor instructor) {
-
+        System.out.println("Added with JDBC : " + instructor.getFirstName() + " " + instructor.getLastName());
     }
 
     @Override
@@ -70,7 +70,7 @@ public class JdbcCrudDao implements CategoryDao, CourseDao, InstructorDao, Stude
     //region student
     @Override
     public void addStudent(Student student) {
-
+        System.out.println("Added with JDBC : " + student.getFirstName() + " " + student.getLastName());
     }
 
     @Override

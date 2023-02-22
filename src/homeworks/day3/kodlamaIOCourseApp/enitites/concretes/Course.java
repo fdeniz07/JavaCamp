@@ -1,7 +1,5 @@
 package homeworks.day3.kodlamaIOCourseApp.enitites.concretes;
 
-import homeworks.day3.kodlamaIOCourseApp.enitites.enums.CourseStatus;
-
 import java.util.List;
 
 public class Course {
@@ -12,19 +10,21 @@ public class Course {
     private String courseImagePath;
     private double price;
     private int coursePeriod;
-
+    private String courseStatus;
 
     public Course() {
     }
 
-    public Course(String id, String courseName, String courseDetails, String courseImagePath, double price, int coursePeriod, Instructor instructor, Category category, List<Student> studentsList, CourseStatus courseStatus) {
+    public Course(String id, String courseName, String courseDetails, String courseImagePath, double price, int coursePeriod, Instructor instructor, Category category, List<Student> studentsList, String courseStatus) {
         this.id = id;
         this.courseName = courseName;
         this.courseDetails = courseDetails;
         this.courseImagePath = courseImagePath;
         this.price = price;
         this.coursePeriod = coursePeriod;
+        this.courseStatus = courseStatus;
     }
+
 
     public String getId() {
         return id;
@@ -54,7 +54,7 @@ public class Course {
         return courseImagePath;
     }
 
-    public void setCourseImagePaths(String courseImagePaths) {
+    public void setCourseImagePaths(String courseImagePath) {
         this.courseImagePath = courseImagePath;
     }
 
@@ -72,6 +72,27 @@ public class Course {
 
     public void setCoursePeriod(int coursePeriod) {
         this.coursePeriod = coursePeriod;
+    }
+
+    public String getCourseStatus() {
+        return courseStatus;
+    }
+
+    public void setCourseStatus(String courseStatus) {
+        this.courseStatus = courseStatus;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id='" + id + '\'' +
+                ", courseName='" + courseName + '\'' +
+                ", courseDetails='" + courseDetails + '\'' +
+                ", courseImagePath='" + courseImagePath + '\'' +
+                ", price=" + price +
+                ", coursePeriod=" + coursePeriod +
+                ", courseStatus='" + courseStatus + '\'' +
+                '}';
     }
 
 }

@@ -1,6 +1,9 @@
 package homeworks.day3.kodlamaIOCourseApp.business.abstracts;
 
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Category;
+import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Student;
+
+import java.util.List;
 
 public interface CategoryService {
 
@@ -10,5 +13,10 @@ public interface CategoryService {
 
     void deleteCategory(String id) throws Exception;
 
+    List<Category> getCategoryList();
+
+    Category getCategoryById(String id);
+
+    void fillCategoryList();
 
 }

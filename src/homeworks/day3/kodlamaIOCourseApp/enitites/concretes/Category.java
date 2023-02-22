@@ -1,16 +1,10 @@
 package homeworks.day3.kodlamaIOCourseApp.enitites.concretes;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Category {
 
     private String id;
     private String categoryName;
     private String categoryDetail;
-
-
-    private static List<Category> categoryList=new ArrayList<>();
 
     public Category() {
     }
@@ -54,4 +48,5 @@ public class Category {
                 ", categoryDetail='" + categoryDetail + '\'' +
                 '}';
     }
+
 }
