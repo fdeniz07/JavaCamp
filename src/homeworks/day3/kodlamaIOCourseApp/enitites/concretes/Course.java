@@ -2,7 +2,6 @@ package homeworks.day3.kodlamaIOCourseApp.enitites.concretes;
 
 import homeworks.day3.kodlamaIOCourseApp.enitites.enums.CourseStatus;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Course {
@@ -18,7 +17,7 @@ public class Course {
     public Course() {
     }
 
-    public Course(String id, String courseName, String courseDetails, String courseImagePath, double price, int coursePeriod, Instructor instructor, Category category, List<Students> studentsList, CourseStatus courseStatus) {
+    public Course(String id, String courseName, String courseDetails, String courseImagePath, double price, int coursePeriod, Instructor instructor, Category category, List<Student> studentsList, CourseStatus courseStatus) {
         this.id = id;
         this.courseName = courseName;
         this.courseDetails = courseDetails;

@@ -1,38 +1,54 @@
 package homeworks.day3.kodlamaIOCourseApp.business.concretes;
 
-import homeworks.day3.kodlamaIOCourseApp.core.helpers.IdMaker;
+import homeworks.day3.kodlamaIOCourseApp.business.abstracts.InstructorService;
 import homeworks.day3.kodlamaIOCourseApp.core.logging.Logger;
-import homeworks.day3.kodlamaIOCourseApp.dataAccess.abstracts.CrudDao;
-import homeworks.day3.kodlamaIOCourseApp.dataAccess.concretes.HibernateCrudDao;
+import homeworks.day3.kodlamaIOCourseApp.dataAccess.abstracts.InstructorDao;
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Instructor;
+
 
 import java.util.List;
 
-public class InstructorManager {
+public class InstructorManager implements InstructorService {
 
-    private CrudDao crudDao;
+    InstructorDao instructorDao;
+
     private Logger[] loggers;
 
     List<Instructor> instructors;
 
-    public InstructorManager(CrudDao crudDao, Logger[] loggers) {
-        this.crudDao = crudDao;
+    public InstructorManager(InstructorDao instructorDao, Logger[] loggers, List<Instructor> instructors) {
+        this.instructorDao = instructorDao;
         this.loggers = loggers;
+        this.instructors = instructors;
     }
 
-    public void addInstructor(Instructor instructor) throws Exception{
+    @Override
+    public void addInstructor(Instructor instructor) throws Exception {
 
         for (Instructor existInstructor: instructors){
             if (existInstructor.getFirstName().equals(instructor.getFirstName()) && existInstructor.getLastName().equals(instructor.getLastName())){
                 throw new Exception("Bu egitmen daha önce kayit edilmistir. Lütfen farkli bir egitmen giriniz!");
             }
         }
-        CrudDao crudDao = new HibernateCrudDao();
-        crudDao.addInstructor(instructor);
+
+        instructorDao.addInstructor(instructor);
+
 
         for (Logger logger : loggers) {
             logger.log(instructor.getFirstName() + " " + instructor.getLastName());
         }
+
     }
+
+    @Override
+    public void updateInstructor(String id) throws Exception {
+
+    }
+
+    @Override
+    public void deleteInstructor(String id) throws Exception {
+
+    }
+
 
 }

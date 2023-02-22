@@ -1,12 +1,9 @@
 package homeworks.day3.kodlamaIOCourseApp.enitites.concretes;
 
-import homeworks.day3.kodlamaIOCourseApp.business.concretes.InstructorManager;
 import homeworks.day3.kodlamaIOCourseApp.enitites.abstracts.Users;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
 
 public class Instructor extends Users {
 

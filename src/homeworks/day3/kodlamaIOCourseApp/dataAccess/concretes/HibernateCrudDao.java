@@ -1,34 +1,20 @@
 package homeworks.day3.kodlamaIOCourseApp.dataAccess.concretes;
 
-import homeworks.day3.kodlamaIOCourseApp.dataAccess.abstracts.CrudDao;
+import homeworks.day3.kodlamaIOCourseApp.dataAccess.abstracts.CategoryDao;
+import homeworks.day3.kodlamaIOCourseApp.dataAccess.abstracts.CourseDao;
+import homeworks.day3.kodlamaIOCourseApp.dataAccess.abstracts.InstructorDao;
+import homeworks.day3.kodlamaIOCourseApp.dataAccess.abstracts.StudentDao;
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Category;
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Course;
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Instructor;
+import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Student;
 
-public class HibernateCrudDao implements CrudDao {
-    //region add
-    @Override
-    public void addInstructor(Instructor instructor) {
+public class HibernateCrudDao implements CategoryDao, CourseDao, InstructorDao, StudentDao {
 
-        System.out.println(instructor.getFirstName() + " " + instructor.getLastName() + " added to Instructor with Hibernate");
-    }
 
+    //region category
     @Override
     public void addCategory(Category category) {
-
-        System.out.println(category.getCategoryName() + " added to Category with Hibernate");
-    }
-
-    @Override
-    public void addCourse(Course course) {
-
-        System.out.println(course.getCourseName() + " added to Course with Hibernate");
-    }
-    //endregion
-
-    //region update
-    @Override
-    public void updateInstructor(String id) {
 
     }
 
@@ -38,19 +24,20 @@ public class HibernateCrudDao implements CrudDao {
     }
 
     @Override
-    public void updateCourse(String id) {
+    public void deleteCategory(String id) {
 
     }
+
     //endregion
 
-    //region delete
+    //region course
     @Override
-    public void deleteInstructor(String id) {
+    public void addCourse(Course course) {
 
     }
 
     @Override
-    public void deleteCategory(String id) {
+    public void updateCourse(String id) {
 
     }
 
@@ -58,7 +45,43 @@ public class HibernateCrudDao implements CrudDao {
     public void deleteCourse(String id) {
 
     }
+
     //endregion
 
+    //region instructor
+    @Override
+    public void addInstructor(Instructor instructor) {
 
+    }
+
+    @Override
+    public void updateInstructor(String id) {
+
+    }
+
+    @Override
+    public void deleteInstructor(String id) {
+
+    }
+
+
+    //endregion
+
+    //region student
+    @Override
+    public void addStudent(Student student) {
+
+    }
+
+    @Override
+    public void updatetudent(String id) {
+
+    }
+
+    @Override
+    public void deletetudent(String id) {
+
+    }
+
+    //endregion
 }
