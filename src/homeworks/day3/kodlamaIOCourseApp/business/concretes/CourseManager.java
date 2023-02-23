@@ -3,10 +3,12 @@ package homeworks.day3.kodlamaIOCourseApp.business.concretes;
 import homeworks.day3.kodlamaIOCourseApp.business.abstracts.CourseService;
 import homeworks.day3.kodlamaIOCourseApp.core.logging.Logger;
 import homeworks.day3.kodlamaIOCourseApp.dataAccess.abstracts.CourseDao;
+import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Category;
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Course;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class CourseManager implements CourseService {
 
@@ -16,6 +18,8 @@ public class CourseManager implements CourseService {
     CategoryManager cm;
 
     private Logger[] loggers;
+    List<Course> courses;
+
     public static List<Course> courseList = new ArrayList<>();
 
     public CourseManager() {
@@ -24,7 +28,7 @@ public class CourseManager implements CourseService {
     public CourseManager(CourseDao courseDao, Logger[] loggers, List<Course> courses) {
         this.courseDao = courseDao;
         this.loggers = loggers;
-        this.courseList = courses;
+        this.courses = courses;
     }
 
     @Override
@@ -65,7 +69,7 @@ public class CourseManager implements CourseService {
 
     public static Course getCourseById(String id) {
         for (Course w : courseList) {
-            if (w.getId() == id) {
+            if (Objects.equals(w.getId(), id)) {
                 return w;
             }
         }

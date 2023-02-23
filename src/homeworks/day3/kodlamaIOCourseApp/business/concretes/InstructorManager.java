@@ -12,7 +12,7 @@ import java.util.List;
 public class InstructorManager implements InstructorService {
 
     InstructorDao instructorDao;
-    CourseManager cm;
+    List<Instructor> instructors = new ArrayList<>();
 
     private Logger[] loggers;
 
@@ -21,20 +21,18 @@ public class InstructorManager implements InstructorService {
     public InstructorManager(InstructorDao instructorDao, Logger[] loggers, List<Instructor> instructors) {
         this.instructorDao = instructorDao;
         this.loggers = loggers;
-        this.instructorList = instructors;
+        instructorList = instructors;
     }
 
     @Override
     public void addInstructor(Instructor instructor) throws Exception {
-
-        for (Instructor existInstructor : instructorList) {
-            if (existInstructor.getFirstName().equals(instructor.getFirstName()) && existInstructor.getLastName().equals(instructor.getLastName())) {
+        fillInstructorList();
+        for (Instructor w : instructorList) {
+            if (w.getFirstName().equals(instructor.getFirstName()) && w.getLastName().equals(instructor.getLastName())) {
                 throw new Exception("Bu egitmen daha önce kayit edilmistir. Lütfen farkli bir egitmen giriniz!");
             }
         }
-
         instructorDao.addInstructor(instructor);
-
 
         for (Logger logger : loggers) {
             logger.log(instructor.getFirstName() + " " + instructor.getLastName());
@@ -84,13 +82,12 @@ public class InstructorManager implements InstructorService {
 
     @Override
     public void showInstructors() {
-        this.fillInstructorList();
         System.out.println();
-        System.out.println("////////////////////////////////////// INSTRUCTOR LIST \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \n");
+        System.out.println("\033[33m ////////////////////////////////////// INSTRUCTOR LIST \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \033[0m \n");
         System.out.printf("%-16s  %-15s  %-15s  %-30s  %-15s  %-12s  %-10s\n", "Instructor Code", "First Name", "Last Name", "Email", "Phone Number", "Certificates", "Course Code");
         System.out.printf("%-16s  %-15s  %-15s  %-30s  %-15s  %-12s %-10s \n", "---------------", "-------------", "-------------", "-----------------------------", "---------------", "-----------", "-----------");
         for (Instructor w : instructorList) {
-            System.out.printf("%-16s  %-15s  %-15s  %-30s  %-15s  %-12s %-10s\n", w.getId(), w.getFirstName(), w.getLastName(), w.getEmail(), w.getPhoneNumber(), w.getCertificates(),w.getCourse());
+            System.out.printf("%-16s  %-15s  %-15s  %-30s  %-15s  %-12s %-10s\n", w.getId(), w.getFirstName(), w.getLastName(), w.getEmail(), w.getPhoneNumber(), w.getCertificates(), w.getCourse());
         }
         System.out.println();
     }

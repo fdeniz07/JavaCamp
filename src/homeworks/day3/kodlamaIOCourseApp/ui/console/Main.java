@@ -8,8 +8,6 @@ import homeworks.day3.kodlamaIOCourseApp.core.logging.DatabaseLogger;
 import homeworks.day3.kodlamaIOCourseApp.core.logging.FileLogger;
 import homeworks.day3.kodlamaIOCourseApp.core.logging.Logger;
 import homeworks.day3.kodlamaIOCourseApp.core.logging.MailLogger;
-
-import homeworks.day3.kodlamaIOCourseApp.dataAccess.abstracts.CategoryDao;
 import homeworks.day3.kodlamaIOCourseApp.dataAccess.concretes.HibernateDao;
 import homeworks.day3.kodlamaIOCourseApp.dataAccess.concretes.JdbcDao;
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Category;
@@ -30,26 +28,28 @@ public class Main {
 
         CourseManager courseManager = new CourseManager();
 
+        System.out.println();
+
         Instructor instructor1 = new Instructor();
         instructor1.setId("INST-1005");
-        instructor1.setFirstName("Gencay");
-        instructor1.setLastName("Yildiz");
+        instructor1.setFirstName("Gencay");//Gencay Engin
+        instructor1.setLastName("Yildiz");//Yildiz Demirog
         instructor1.setEmail("gencay.yildiz@gencay.com");
         instructor1.setPhoneNumber("123456789");
-        instructor1.setCertificates("MCDP");
-        instructor1.setCourse(courseManager.getCourseById("COU-103"));
+        instructor1.setCertificates("MCPD");
+        instructor1.setCourse(CourseManager.getCourseById("COU-103"));
 
         InstructorManager instructorManager = new InstructorManager(new HibernateDao(), loggers, InstructorManager.instructorList);
         instructorManager.addInstructor(instructor1);
-       // instructorManager.fillInstructorList();
-instructorManager.showInstructors();
+        InstructorManager.instructorList.add(instructor1);
+        instructorManager.showInstructors();
 
         System.out.println("***********************************");
 
         Student student1 = new Student("STD-10001", "Ali", "Can", "ali.can@hotmail.de", "+49123112456", false, "Wilhelm Straße 17 58085 Hagen");
         StudentManager studentManager = new StudentManager(new JdbcDao(), loggers, StudentManager.studentList);
         studentManager.addStudent(student1);
-        studentManager.fillStudentList();
+        StudentManager.fillStudentList();
 
         System.out.println("***********************************");
 

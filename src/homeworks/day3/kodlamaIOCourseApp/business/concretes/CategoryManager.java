@@ -27,7 +27,7 @@ public class CategoryManager implements CategoryService {
 
     @Override
     public void addCategory(Category category)  throws Exception{
-
+fillCategoryList();
         for (Category existCategory: categories){
             if (existCategory.getCategoryName() == category.getCategoryName()){
                 throw new Exception("Bu kategori daha önce olusturulmus. Lütfen farkli bir kategori olusturunuz!");

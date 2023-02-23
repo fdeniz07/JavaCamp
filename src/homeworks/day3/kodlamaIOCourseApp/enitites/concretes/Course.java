@@ -1,5 +1,6 @@
 package homeworks.day3.kodlamaIOCourseApp.enitites.concretes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Course {
@@ -11,6 +12,8 @@ public class Course {
     private double price;
     private int coursePeriod;
     private String courseStatus;
+
+    public static List<Course> courseList = new ArrayList<>();
 
     public Course() {
     }
