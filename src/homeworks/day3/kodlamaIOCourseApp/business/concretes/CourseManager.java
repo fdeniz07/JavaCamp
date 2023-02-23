@@ -62,8 +62,8 @@ public class CourseManager implements CourseService {
         return null;
     }
 
-    @Override
-    public Course getCourseById(String id) {
+
+    public static Course getCourseById(String id) {
         for (Course w : courseList) {
             if (w.getId() == id) {
                 return w;
@@ -75,10 +75,10 @@ public class CourseManager implements CourseService {
     @Override
     public void fillCourseList() {
 
-        Course course1 = new Course("COU-101", "C#", "C# Development Course", "...//c#", 59.99, 3, im.getSInstructorById("INST-1"), cm.getCategoryById("CAT-1001"), sm.getStudentList(), "Started");
-        Course course2 = new Course("COU-102", "Java", "Java Development Course", "...//java", 69.99, 3, im.getSInstructorById("INST-2"), cm.getCategoryById("CAT-1002"), sm.getStudentList(), "Started");
-        Course course3 = new Course("COU-103", "React", "Frontend Development Course", "...//react", 49.99, 3, im.getSInstructorById("INST-2"), cm.getCategoryById("CAT-1003"), sm.getStudentList(), "Finished");
-        Course course4 = new Course("COU-104", "SQL", "Database Development Course", "...//sql", 39.99, 3, im.getSInstructorById("INST-1"), cm.getCategoryById("CAT-1004"), sm.getStudentList(), "Started");
+        Course course1 = new Course("COU-101", "C#", "C# Development Course", "...//c#", 59.99, 3, InstructorManager.getSInstructorById("INST-1"), CategoryManager.getCategoryById("CAT-1001"), StudentManager.fillStudentList(), "Started");
+        Course course2 = new Course("COU-102", "Java", "Java Development Course", "...//java", 69.99, 3, InstructorManager.getSInstructorById("INST-2"), CategoryManager.getCategoryById("CAT-1002"), StudentManager.fillStudentList(), "Started");
+        Course course3 = new Course("COU-103", "React", "Frontend Development Course", "...//react", 49.99, 3, InstructorManager.getSInstructorById("INST-2"), CategoryManager.getCategoryById("CAT-1003"), StudentManager.fillStudentList(), "Finished");
+        Course course4 = new Course("COU-104", "SQL", "Database Development Course", "...//sql", 39.99, 3, InstructorManager.getSInstructorById("INST-1"), CategoryManager.getCategoryById("CAT-1004"), StudentManager.fillStudentList(), "Started");
 
         courseList.add(course1);
         courseList.add(course2);

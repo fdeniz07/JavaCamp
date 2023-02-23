@@ -41,23 +41,28 @@ public class Main {
 
         InstructorManager instructorManager = new InstructorManager(new HibernateDao(), loggers, InstructorManager.instructorList);
         instructorManager.addInstructor(instructor1);
+       // instructorManager.fillInstructorList();
+instructorManager.showInstructors();
 
         System.out.println("***********************************");
 
         Student student1 = new Student("STD-10001", "Ali", "Can", "ali.can@hotmail.de", "+49123112456", false, "Wilhelm Straße 17 58085 Hagen");
         StudentManager studentManager = new StudentManager(new JdbcDao(), loggers, StudentManager.studentList);
         studentManager.addStudent(student1);
+        studentManager.fillStudentList();
 
         System.out.println("***********************************");
 
         Category category1 = new Category("CAT-1004", "Frontend", "Frontend Development Course");
         CategoryManager categoryManager = new CategoryManager(new HibernateDao(), loggers, CategoryManager.categoryList);
         categoryManager.addCategory(category1);
+        categoryManager.fillCategoryList();
 
         System.out.println("***********************************");
 
         Course course = new Course("COU-105", "Angular", "Angular Development Course", "...//angular", 59.99, 2, instructorManager.getSInstructorById("INST-1005"), categoryManager.getCategoryById("CAT-1004"), studentManager.getStudentList(), "Not Started");
         CourseManager courseManager2 = new CourseManager(new JdbcDao(), loggers, CourseManager.courseList);
         courseManager2.addCourse(course);
+        courseManager2.fillCourseList();
     }
 }

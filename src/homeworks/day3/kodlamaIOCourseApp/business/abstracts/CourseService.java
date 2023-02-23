@@ -16,7 +16,7 @@ public interface CourseService {
 
     List<Course> getCourseList();
 
-    Course getCourseById(String id);
+    //Course getCourseById(String id);
 
     void fillCourseList();
 

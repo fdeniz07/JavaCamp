@@ -16,6 +16,9 @@ public class CategoryManager implements CategoryService {
 
     public static List<Category> categoryList = new ArrayList<>();
 
+    public CategoryManager() {
+    }
+
     public CategoryManager(CategoryDao categoryDao, Logger[] loggers, List<Category> categories) {
        this.categoryDao=categoryDao;
         this.loggers = loggers;
@@ -53,8 +56,8 @@ public class CategoryManager implements CategoryService {
         return null;
     }
 
-    @Override
-    public Category getCategoryById(String id) {
+
+    public static Category getCategoryById(String id) {
         for (Category w : categoryList){
             if (w.getId() == id){
                 return w;

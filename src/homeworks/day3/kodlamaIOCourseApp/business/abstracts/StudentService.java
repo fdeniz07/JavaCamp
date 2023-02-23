@@ -16,7 +16,7 @@ public interface StudentService {
 
     List<Student> getStudentList();
 
-    Student getStudentById(String id);
+    //Student getStudentById(String id);
 
-    void fillStudentList();
+    //void fillStudentList();
 }

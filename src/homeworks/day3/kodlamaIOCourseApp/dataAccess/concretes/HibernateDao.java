@@ -15,7 +15,7 @@ public class HibernateDao implements CategoryDao, CourseDao, InstructorDao, Stud
     //region category
     @Override
     public void addCategory(Category category) {
-        System.out.println("Added with Hibernate : " + category.getCategoryName());
+        System.out.println("Added with Hibernate : " + category.getCategoryName() + " on the Category List" );
     }
 
     @Override
@@ -33,7 +33,7 @@ public class HibernateDao implements CategoryDao, CourseDao, InstructorDao, Stud
     //region course
     @Override
     public void addCourse(Course course) {
-        System.out.println("Added with Hibernate : " + course.getCourseName());
+        System.out.println("Added with Hibernate : " + course.getCourseName() + " on the Course List" );
     }
 
     @Override
@@ -51,7 +51,7 @@ public class HibernateDao implements CategoryDao, CourseDao, InstructorDao, Stud
     //region instructor
     @Override
     public void addInstructor(Instructor instructor) {
-        System.out.println("Added with Hibernate : " + instructor.getFirstName() + " " + instructor.getLastName());
+        System.out.println("Added with Hibernate : " + instructor.getFirstName() + " " + instructor.getLastName() + " on the Instructer List" );
     }
 
     @Override
@@ -70,7 +70,7 @@ public class HibernateDao implements CategoryDao, CourseDao, InstructorDao, Stud
     //region student
     @Override
     public void addStudent(Student student) {
-        System.out.println("Added with Hibernate : " + student.getFirstName() + " " + student.getLastName());
+        System.out.println("Added with Hibernate : " + student.getFirstName() + " " + student.getLastName() + " on the Student List" );
     }
 
     @Override

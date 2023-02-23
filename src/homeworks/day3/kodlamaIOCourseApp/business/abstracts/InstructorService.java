@@ -16,7 +16,9 @@ public interface InstructorService {
 
     List<Instructor> getInstructorList();
 
-    Instructor getSInstructorById(String id);
+    //Instructor getSInstructorById(String id);
 
     void fillInstructorList();
+
+    void showInstructors();
 }

@@ -55,8 +55,8 @@ public class StudentManager implements StudentService {
         return null;
     }
 
-    @Override
-    public Student getStudentById(String id) {
+    //@Override
+    public static Student getStudentById(String id) {
         for (Student w : studentList) {
             if (w.getId() == id) {
                 return w;
@@ -65,8 +65,8 @@ public class StudentManager implements StudentService {
         return null;
     }
 
-    @Override
-    public void fillStudentList() {
+    //@Override
+    public static List<Student> fillStudentList() {
         Student student1 = new Student("STD-5001", "Ahmet", "Güngör", "ahmet@gungor.com", "+9012411234", false, "Ankara");
         Student student2 = new Student("STD-5002", "Mehmet", "Kaya", "m.kaya@gmail.com", "+9012411234", false, "Istanbul");
         Student student3 = new Student("STD-5003", "Asli", "Paksoy", "paksoy35@hotmail.com", "+9012411234", true, "Izmir");
@@ -76,5 +76,7 @@ public class StudentManager implements StudentService {
         studentList.add(student2);
         studentList.add(student3);
         studentList.add(student4);
+
+        return studentList;
     }
 }
