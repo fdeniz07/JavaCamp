@@ -14,7 +14,7 @@ public class CategoryManager implements CategoryService {
     List<Category> categories;
     private Logger[] loggers;
 
-    List<Category> categoryList=new ArrayList<>();
+    public static List<Category> categoryList = new ArrayList<>();
 
     public CategoryManager(CategoryDao categoryDao, Logger[] loggers, List<Category> categories) {
        this.categoryDao=categoryDao;

@@ -11,13 +11,15 @@ import java.util.List;
 public class CourseManager implements CourseService {
 
     CourseDao courseDao;
-   StudentManager sm;
-   InstructorManager im;
-   CategoryManager cm;
+    StudentManager sm;
+    InstructorManager im;
+    CategoryManager cm;
 
     private Logger[] loggers;
-    List<Course> courseList = new ArrayList<>();
+    public static List<Course> courseList = new ArrayList<>();
 
+    public CourseManager() {
+    }
 
     public CourseManager(CourseDao courseDao, Logger[] loggers, List<Course> courses) {
         this.courseDao = courseDao;
@@ -73,10 +75,10 @@ public class CourseManager implements CourseService {
     @Override
     public void fillCourseList() {
 
-        Course course1 = new Course("COU-101", "C#", "C# Development Course", "...//c#", 59.99, 3,im.getSInstructorById("INST-1"), cm.getCategoryById("CAT-1001"),sm.getStudentList() ,"Started");
-        Course course2 = new Course("COU-102", "Java", "Java Development Course", "...//java", 69.99, 3,im.getSInstructorById("INST-2"), cm.getCategoryById("CAT-1002"),sm.getStudentList() ,"Started");
-        Course course3 = new Course("COU-103", "React", "Frontend Development Course", "...//react", 49.99, 3,im.getSInstructorById("INST-2"), cm.getCategoryById("CAT-1003"),sm.getStudentList() ,"Finished");
-        Course course4 = new Course("COU-104", "SQL", "Database Development Course", "...//sql", 39.99, 3,im.getSInstructorById("INST-1"), cm.getCategoryById("CAT-1004"),sm.getStudentList() ,"Not Started");
+        Course course1 = new Course("COU-101", "C#", "C# Development Course", "...//c#", 59.99, 3, im.getSInstructorById("INST-1"), cm.getCategoryById("CAT-1001"), sm.getStudentList(), "Started");
+        Course course2 = new Course("COU-102", "Java", "Java Development Course", "...//java", 69.99, 3, im.getSInstructorById("INST-2"), cm.getCategoryById("CAT-1002"), sm.getStudentList(), "Started");
+        Course course3 = new Course("COU-103", "React", "Frontend Development Course", "...//react", 49.99, 3, im.getSInstructorById("INST-2"), cm.getCategoryById("CAT-1003"), sm.getStudentList(), "Finished");
+        Course course4 = new Course("COU-104", "SQL", "Database Development Course", "...//sql", 39.99, 3, im.getSInstructorById("INST-1"), cm.getCategoryById("CAT-1004"), sm.getStudentList(), "Started");
 
         courseList.add(course1);
         courseList.add(course2);

@@ -12,10 +12,11 @@ import java.util.List;
 public class InstructorManager implements InstructorService {
 
     InstructorDao instructorDao;
+    CourseManager cm;
 
     private Logger[] loggers;
 
-    List<Instructor> instructorList= new ArrayList<>();
+    public static List<Instructor> instructorList = new ArrayList<>();
 
     public InstructorManager(InstructorDao instructorDao, Logger[] loggers, List<Instructor> instructors) {
         this.instructorDao = instructorDao;
@@ -26,8 +27,8 @@ public class InstructorManager implements InstructorService {
     @Override
     public void addInstructor(Instructor instructor) throws Exception {
 
-        for (Instructor existInstructor: instructorList){
-            if (existInstructor.getFirstName().equals(instructor.getFirstName()) && existInstructor.getLastName().equals(instructor.getLastName())){
+        for (Instructor existInstructor : instructorList) {
+            if (existInstructor.getFirstName().equals(instructor.getFirstName()) && existInstructor.getLastName().equals(instructor.getLastName())) {
                 throw new Exception("Bu egitmen daha önce kayit edilmistir. Lütfen farkli bir egitmen giriniz!");
             }
         }
@@ -58,8 +59,8 @@ public class InstructorManager implements InstructorService {
 
     @Override
     public Instructor getSInstructorById(String id) {
-        for (Instructor w : instructorList){
-            if (w.getId() == id){
+        for (Instructor w : instructorList) {
+            if (w.getId() == id) {
                 return w;
             }
         }
@@ -68,6 +69,16 @@ public class InstructorManager implements InstructorService {
 
     @Override
     public void fillInstructorList() {
+
+        Instructor instructor1 = new Instructor("INST-1001", "Engin", "Demirog", "engin.demirog@kodlama.io", "123456789", "OCA,OCP", cm.getCourseById("COU-102"));
+        Instructor instructor2 = new Instructor("INST-1002", "Mustafa Murat", "Coskun", "mustafa.murat@gmail.com", "123456789", "MCPD", cm.getCourseById("COU-104"));
+        Instructor instructor3 = new Instructor("INST-1003", "Ömer Faruk", "Colakoglu", "o.colakoglu@isisan.com.tr", "123456789", "MVC,OCA", cm.getCourseById("COU-103"));
+        Instructor instructor4 = new Instructor("INST-1004", "Fatih", "Cakiroglu", "fcakiroglu@gmail.com", "123456789", "MCPD,MVP", cm.getCourseById("COU-101"));
+
+        instructorList.add(instructor1);
+        instructorList.add(instructor2);
+        instructorList.add(instructor3);
+        instructorList.add(instructor4);
 
     }
 
