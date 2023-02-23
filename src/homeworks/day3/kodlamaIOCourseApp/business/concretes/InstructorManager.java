@@ -84,10 +84,10 @@ public class InstructorManager implements InstructorService {
     public void showInstructors() {
         System.out.println();
         System.out.println("\033[33m ////////////////////////////////////// INSTRUCTOR LIST \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \033[0m \n");
-        System.out.printf("%-16s  %-15s  %-15s  %-30s  %-15s  %-12s  %-10s\n", "Instructor Code", "First Name", "Last Name", "Email", "Phone Number", "Certificates", "Course Code");
+        System.out.printf("%-16s \033[33m %-15s  %-15s \033[0m %-30s  %-15s  %-12s  %-10s\n", "Instructor Code", "First Name", "Last Name", "Email", "Phone Number", "Certificates", "Course Code");
         System.out.printf("%-16s  %-15s  %-15s  %-30s  %-15s  %-12s %-10s \n", "---------------", "-------------", "-------------", "-----------------------------", "---------------", "-----------", "-----------");
         for (Instructor w : instructorList) {
-            System.out.printf("%-16s  %-15s  %-15s  %-30s  %-15s  %-12s %-10s\n", w.getId(), w.getFirstName(), w.getLastName(), w.getEmail(), w.getPhoneNumber(), w.getCertificates(), w.getCourse());
+            System.out.printf("%-16s \033[33m %-15s  %-15s \033[0m %-30s  %-15s  %-12s %-10s\n", w.getId(), w.getFirstName(), w.getLastName(), w.getEmail(), w.getPhoneNumber(), w.getCertificates(), w.getCourse());
         }
         System.out.println();
     }
