@@ -20,4 +20,5 @@ public interface CourseService {
 
     void fillCourseList();
 
+    void showCourses();
 }

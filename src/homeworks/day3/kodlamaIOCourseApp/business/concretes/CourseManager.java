@@ -3,6 +3,7 @@ package homeworks.day3.kodlamaIOCourseApp.business.concretes;
 import homeworks.day3.kodlamaIOCourseApp.business.abstracts.CourseService;
 import homeworks.day3.kodlamaIOCourseApp.core.logging.Logger;
 import homeworks.day3.kodlamaIOCourseApp.dataAccess.abstracts.CourseDao;
+import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Category;
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Course;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class CourseManager implements CourseService {
     CategoryManager cm;
 
     private Logger[] loggers;
-    List<Course> courses;
+    List<Course> courses = new ArrayList<>();
 
     public static List<Course> courseList = new ArrayList<>();
 
@@ -32,14 +33,14 @@ public class CourseManager implements CourseService {
 
     @Override
     public void addCourse(Course course) throws Exception {
-
+        fillCourseList();
         for (Course existCourse : courseList) {
             if (existCourse.getCourseName().equals(course.getCourseName())) {
                 throw new Exception("Bu kurs daha önce tanimlanmistir. Lütfen farkli bir kurs ismi giriniz!");
             }
         }
         if (course.getPrice() < 0) {
-            throw new Exception("Kurs ücreti 0 olamaz.");
+            throw new Exception("Kurs ücreti $0'dan büyük olamali.");
         } else {
             courseDao.addCourse(course);
         }
@@ -87,6 +88,19 @@ public class CourseManager implements CourseService {
         courseList.add(course2);
         courseList.add(course3);
         courseList.add(course4);
+    }
+
+    @Override
+    public void showCourses() {
+        System.out.println();
+        System.out.println("\033[34m ////////////////////////////////////// COURSE LIST \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \033[0m \n");
+        System.out.printf("%-16s \033[34m %-15s  \033[0m %-30s %-20s %-10s %-16s %-10s \n", "Course Code", "Course Name", "Course Details", "Image Path", "Price", "Course Period", "Status");
+        System.out.printf("%-16s \033[34m %-15s  \033[0m %-30s %-20s %-10s %-16s %-10s \n", "---------------", "---------------", "------------------------------", "--------------------", "------", "--------------", "----------");
+        for (Course w : courseList) {
+            System.out.printf("%-16s \033[34m %-15s  \033[0m %-30s %-20s $%-10s %-16s %-10s \n", w.getId(), w.getCourseName(), w.getCourseDetails(), w.getCourseImagePath(), w.getPrice(), w.getCoursePeriod()+" Months", w.getCourseStatus());
+        }
+        System.out.println();
+
     }
 
 }

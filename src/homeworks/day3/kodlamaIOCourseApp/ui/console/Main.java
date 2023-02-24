@@ -15,21 +15,14 @@ import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Course;
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Instructor;
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Student;
 
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
-
 
     public static void main(String[] args) throws Exception {
 
         Logger[] loggers = {new DatabaseLogger(), new FileLogger(), new MailLogger()};
 
-        CourseManager courseManager = new CourseManager();
-
-
         System.out.println();
+        System.out.println("\033[33m*********************************************************************************************************\033[0m");
 
         Instructor instructor1 = new Instructor();
         instructor1.setId("INST-1005");
@@ -45,7 +38,7 @@ public class Main {
         InstructorManager.instructorList.add(instructor1);
         instructorManager.showInstructors();
 
-        System.out.println("***********************************");
+        System.out.println("\033[31m*********************************************************************************************************\033[0m ");
 
         Student student1 = new Student("STD-10001", "Ali", "Can", "ali.can@hotmail.de", "+49123112456", false, "Wilhelm Straße 17 58085 Hagen");
         StudentManager studentManager = new StudentManager(new JdbcDao(), loggers, StudentManager.studentList);
@@ -54,7 +47,7 @@ public class Main {
         studentManager.showStudents();
         //StudentManager.fillStudentList();
 
-        System.out.println("***********************************");
+        System.out.println("\033[35m*********************************************************************************************************\033[0m");
 
         Category category1 = new Category("CAT-1005", "AI", "Artificial intelligence Development Course");
         CategoryManager categoryManager = new CategoryManager(new HibernateDao(), loggers, CategoryManager.categoryList);
@@ -63,11 +56,13 @@ public class Main {
         categoryManager.showCategories();
 
 
-        System.out.println("***********************************");
+        System.out.println("\033[34m********************************************************************************************************* \033[0m");
 
-        Course course = new Course("COU-105", "Angular", "Angular Development Course", "...//angular", 59.99, 2, instructorManager.getSInstructorById("INST-1005"), categoryManager.getCategoryById("CAT-1004"), studentManager.getStudentList(), "Not Started");
-        CourseManager courseManager2 = new CourseManager(new JdbcDao(), loggers, CourseManager.courseList);
-        courseManager2.addCourse(course);
-        courseManager2.fillCourseList();
+        Course course1 = new Course("COU-105", "Angular", "Angular Development Course", "...//angular", 29.99, 2, instructorManager.getSInstructorById("INST-1005"), categoryManager.getCategoryById("CAT-1004"), studentManager.getStudentList(), "Not Started");
+        CourseManager courseManager = new CourseManager(new JdbcDao(), loggers, CourseManager.courseList);
+        courseManager.addCourse(course1);
+        CourseManager.courseList.add(course1);
+        courseManager.showCourses();
+        //courseManager.fillCourseList();
     }
 }

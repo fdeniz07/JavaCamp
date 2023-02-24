@@ -25,9 +25,9 @@ public class StudentManager implements StudentService {
 
     @Override
     public void addStudent(Student student) throws Exception {
-
-        for (Student existStudent: students){
-            if (existStudent.getFirstName() == student.getFirstName() && existStudent.getLastName() == student.getLastName()){
+        fillStudentList();
+        for (Student existStudent : students) {
+            if (existStudent.getFirstName() == student.getFirstName() && existStudent.getLastName() == student.getLastName()) {
                 throw new Exception("Bu ögrenci daha önce kaydolmus. Lütfen farkli bir ögrenci kaydi yapiniz!");
             }
         }
