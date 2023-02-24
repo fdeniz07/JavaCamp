@@ -3,7 +3,6 @@ package homeworks.day3.kodlamaIOCourseApp.business.concretes;
 import homeworks.day3.kodlamaIOCourseApp.business.abstracts.CourseService;
 import homeworks.day3.kodlamaIOCourseApp.core.logging.Logger;
 import homeworks.day3.kodlamaIOCourseApp.dataAccess.abstracts.CourseDao;
-import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Category;
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Course;
 
 import java.util.ArrayList;

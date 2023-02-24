@@ -3,7 +3,6 @@ package homeworks.day3.kodlamaIOCourseApp.business.concretes;
 import homeworks.day3.kodlamaIOCourseApp.business.abstracts.StudentService;
 import homeworks.day3.kodlamaIOCourseApp.core.logging.Logger;
 import homeworks.day3.kodlamaIOCourseApp.dataAccess.abstracts.StudentDao;
-import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Category;
 import homeworks.day3.kodlamaIOCourseApp.enitites.concretes.Student;
 
 import java.util.ArrayList;
@@ -54,6 +53,19 @@ public class StudentManager implements StudentService {
     public List<Student> getStudentList() {
         return null;
     }
+
+    @Override
+    public void showStudents() {
+        System.out.println();
+        System.out.println("\033[31m ////////////////////////////////////// STUDENT LIST \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \033[0m \n");
+        System.out.printf("%-16s \033[31m %-15s  %-15s \033[0m %-30s  %-15s  %-12s  %-10s\n", "Student Code", "First Name", "Last Name", "Email", "Phone Number", "Gender", "Address");
+        System.out.printf("%-16s  %-15s  %-15s  %-30s  %-15s  %-12s %-10s \n", "---------------", "-------------", "-------------", "-----------------------------", "---------------", "-----------", "--------------------------------------");
+        for (Student w : studentList) {
+            System.out.printf("%-16s \033[31m %-15s  %-15s \033[0m %-30s  %-15s  %-12s %-10s\n", w.getId(), w.getFirstName(), w.getLastName(), w.getEmail(), w.getPhoneNumber(), w.isGender(), w.getAddress());
+        }
+        System.out.println();
+    }
+
 
     //@Override
     public static Student getStudentById(String id) {

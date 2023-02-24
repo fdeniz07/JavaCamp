@@ -19,4 +19,6 @@ public interface StudentService {
     //Student getStudentById(String id);
 
     //void fillStudentList();
+
+    void showStudents();
 }

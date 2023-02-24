@@ -28,6 +28,7 @@ public class Main {
 
         CourseManager courseManager = new CourseManager();
 
+
         System.out.println();
 
         Instructor instructor1 = new Instructor();
@@ -49,14 +50,18 @@ public class Main {
         Student student1 = new Student("STD-10001", "Ali", "Can", "ali.can@hotmail.de", "+49123112456", false, "Wilhelm Straße 17 58085 Hagen");
         StudentManager studentManager = new StudentManager(new JdbcDao(), loggers, StudentManager.studentList);
         studentManager.addStudent(student1);
-        StudentManager.fillStudentList();
+        StudentManager.studentList.add(student1);
+        studentManager.showStudents();
+        //StudentManager.fillStudentList();
 
         System.out.println("***********************************");
 
-        Category category1 = new Category("CAT-1004", "Frontend", "Frontend Development Course");
+        Category category1 = new Category("CAT-1005", "AI", "Artificial intelligence Development Course");
         CategoryManager categoryManager = new CategoryManager(new HibernateDao(), loggers, CategoryManager.categoryList);
         categoryManager.addCategory(category1);
-        categoryManager.fillCategoryList();
+        CategoryManager.categoryList.add(category1);
+        categoryManager.showCategories();
+
 
         System.out.println("***********************************");
 

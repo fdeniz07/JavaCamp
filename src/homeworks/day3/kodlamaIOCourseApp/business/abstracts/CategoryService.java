@@ -19,4 +19,5 @@ public interface CategoryService {
 
     void fillCategoryList();
 
+    void showCategories();
 }
