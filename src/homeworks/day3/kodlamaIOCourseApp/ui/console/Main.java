@@ -58,7 +58,7 @@ public class Main {
 
         System.out.println("\033[34m********************************************************************************************************* \033[0m");
 
-        Course course1 = new Course("COU-105", "Angular", "Angular Development Course", "...//angular", 29.99, 2, instructorManager.getSInstructorById("INST-1005"), categoryManager.getCategoryById("CAT-1004"), studentManager.getStudentList(), "Not Started");
+        Course course1 = new Course("COU-105", "Angular", "Angular Development Course", "...//angular", -29.99, 2, instructorManager.getSInstructorById("INST-1005"), categoryManager.getCategoryById("CAT-1004"), studentManager.getStudentList(), "Not Started");
         CourseManager courseManager = new CourseManager(new JdbcDao(), loggers, CourseManager.courseList);
         courseManager.addCourse(course1);
         CourseManager.courseList.add(course1);
