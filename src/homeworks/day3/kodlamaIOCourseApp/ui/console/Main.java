@@ -45,7 +45,7 @@ public class Main {
         studentManager.addStudent(student1);
         StudentManager.studentList.add(student1);
         studentManager.showStudents();
-        //StudentManager.fillStudentList();
+
 
         System.out.println("\033[35m*********************************************************************************************************\033[0m");
 
@@ -63,6 +63,6 @@ public class Main {
         courseManager.addCourse(course1);
         CourseManager.courseList.add(course1);
         courseManager.showCourses();
-        //courseManager.fillCourseList();
+
     }
 }
